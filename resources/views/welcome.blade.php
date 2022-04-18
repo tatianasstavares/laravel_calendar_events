@@ -23,14 +23,25 @@
     <body>
         <h1>Algum título</h1>
         @if(10>5)
-        <p>A condição é true</p>
-
-        <p>{{$nome}}</p>
+            <p>A condição é true</p>
+            <p>O nome é {{$nome}} tem {{$idade}} anos.</p>
         @endif
         @if($nome == "Pedro")
-        <p>O nome é Pedro, e a sua profissão é {{$profissao}}</p>
+            <p>O nome é Pedro, e a sua profissão é {{$profissao}}</p>
         @else
-        <p>O nome não é Pedro</p>
+            <p>O nome não é Pedro</p>
         @endif
+        @for ($i = 0; $i < count($arr); $i++)
+            <p>{{$i}} - {{$arr[$i]}}</p>
+        @endfor
+        @php
+            $name = "Tatiana";
+            echo $name
+        @endphp
+        @foreach ($nomes as $nome)
+        <p>{{$loop->index}} - {{$nome}}</p>
+
+
+        @endforeach
     </body>
 </html>
